@@ -1,26 +1,26 @@
 from flask import Flask, render_template, request, json
+import time
+import sqlite3
 app = Flask(__name__)
+
+db = 'H:\Coding\LunchBuddy\lunchbuddy.sqlite' 
+
 
 @app.route("/")
 def main():
     return render_template('index.html')
 
-@app.route('/recordvisit')
-def showSignUp():
+@app.route('/showEnterDetails')
+def showEnterDetails():
     return render_template('recordvisit.html')
 
-
-@app.route('/enterLunchDetails',methods=['POST'])
-def enterLunchDetails():
- 
-    # read the posted values from the UI
-    _restaurant = request.form['inputRestaurant']    
- 
-    # validate the received values
-    if _restaurant:
-        return json.dumps({'html':'<span>All fields are good !!</span>'})
-    else:
-        return json.dumps({'html':'<span>Enter the required fields</span>'})
+@app.route('/enterDetails',methods=['POST'])
+def enterDetails():
+    conn = sqlite3.connect(db)
+    c = conn.cursor()
+    c.execute('UPDATE restaurants SET Name = "Katiii roll" WHERE Name = "Katiii roll"');
+    conn.commit()
+    conn.close() 	
 
 if __name__ == "__main__":
   app.run()

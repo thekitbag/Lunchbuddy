@@ -1,8 +1,8 @@
 $(function(){
-	$('#enter').click(function(){
+	$('#btnEnter').click(function(){
 		
 		$.ajax({
-			url: '/enterLunchDetails',
+			url: '/enterDetails',
 			data: $('form').serialize(),
 			type: 'POST',
 			success: function(response){
