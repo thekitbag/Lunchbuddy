@@ -14,13 +14,14 @@ def main():
 def showEnterDetails():
     return render_template('recordvisit.html')
 
-@app.route('/enterDetails',methods=['POST'])
+@app.route('/enterDetails',methods=['POST','GET'])
 def enterDetails():
     conn = sqlite3.connect(db)
     c = conn.cursor()
-    c.execute('UPDATE restaurants SET Name = "Katiii roll" WHERE Name = "Katiii roll"');
+    c.execute('ALTER TABLE restaurants ADD test3 string;');
     conn.commit()
-    conn.close() 	
+    conn.close()
+    return json.dumps({'message':'column added successfully !'})		
 
 if __name__ == "__main__":
   app.run()
