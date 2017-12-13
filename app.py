@@ -16,12 +16,18 @@ def showEnterDetails():
 
 @app.route('/enterDetails',methods=['POST','GET'])
 def enterDetails():
-    conn = sqlite3.connect(db)
-    c = conn.cursor()
-    c.execute('ALTER TABLE restaurants ADD test4 string;');
-    conn.commit()
-    conn.close()
-    return json.dumps({'message':'column added successfully !'})		
+
+	_name = request.form['inputName']
+	_price = request.form['inputPrice']
+	_distance = request.form['inputDistance']
+
+	conn = sqlite3.connect(db)
+	c = conn.cursor()
+	c.execute("ALTER TABLE restaurants ADD {pr} string;"\
+    	.format(pr=_price))
+	conn.commit()
+	conn.close()
+	return json.dumps({'message':'column added successfully !'})		
 
 if __name__ == "__main__":
   app.run()
