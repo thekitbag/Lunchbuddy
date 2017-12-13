@@ -3,7 +3,7 @@ import time
 import sqlite3
 app = Flask(__name__)
 
-db = 'H:\Coding\LunchBuddy\lunchbuddy.sqlite' 
+db = 'lunchbuddy.sqlite' 
 
 
 @app.route("/")
@@ -18,7 +18,7 @@ def showEnterDetails():
 def enterDetails():
     conn = sqlite3.connect(db)
     c = conn.cursor()
-    c.execute('ALTER TABLE restaurants ADD test3 string;');
+    c.execute('ALTER TABLE restaurants ADD test4 string;');
     conn.commit()
     conn.close()
     return json.dumps({'message':'column added successfully !'})		
