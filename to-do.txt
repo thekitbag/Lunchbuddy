@@ -1,0 +1,8 @@
+take data from the form and add that as a column
+create method for adding a new entry
+make the entered data correspond to a new entry
+CSS
+create page for viewing the data in the db
+create page for picking at random
+create page for querying the db e.g. GF options
+GA and optimise
