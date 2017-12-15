@@ -10,9 +10,9 @@ db = 'lunchbuddy.sqlite'
 def main():
     return render_template('index.html')
 
-@app.route('/showEnterDetails')
-def showEnterDetails():
-    return render_template('recordvisit.html')
+@app.route('/showAddDestination')
+def showAddDestination():
+    return render_template('adddestination.html')
 
 @app.route('/enterDetails',methods=['POST','GET'])
 def enterDetails():
@@ -20,18 +20,21 @@ def enterDetails():
 	_name = request.form['inputName']
 	_price = request.form['inputPrice']
 	_distance = request.form['inputDistance']
+	_takeaway = request.form['inputTakeaway']
+	_eatin = request.form['inputEatIn']
+	_healthiness = request.form['inputHealthiness']
+	_gluten = request.form['inputGluten']
 
 	#send details from the form to the db
 	conn = sqlite3.connect(db)
 	c = conn.cursor()
-	c.execute("INSERT INTO restaurants (Name, Price, Distance ) VALUES (?,?,?);", (_name, _price, _distance))
+	c.execute("INSERT INTO restaurants (Name, Price, Distance, Takeaway, 'Eat in', Healthiness, Gluten) VALUES (?,?,?,?,?,?,?);", (_name, _price, _distance, _takeaway, _eatin, _healthiness, _gluten))
 	conn.commit()
 	conn.close()
 	return json.dumps({'message':'column added successfully !'})		
 
 if __name__ == "__main__":
   app.run()
-
 
 
 

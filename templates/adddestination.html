@@ -3,7 +3,7 @@
   <head>
     <title>Lunch Buddy</title>
     <script src="../static/js/jquery-3.2.1.js"></script>
-    <script src="../static/js/recordvisit.js"></script>    
+    <script src="../static/js/addDestination.js"></script>    
   </head>
  
   <body>
@@ -18,22 +18,22 @@
     
      
       <div class="lunch-details">
-        <h1>Tell the world about your lunch experience</h1>
+        <h1>Add a new lunch destination</h1>
         <form class="form-signin">
         <label for="inputName" class="sr-only">Name</label>
         <input type="name" name="inputName" id="inputName" class="form-control" placeholder="Name" required autofocus>
         <label for="inputPrice" class="sr-only">Price</label>
         <input type="number" name="inputPrice" id="inputPrice" class="form-control" placeholder="Input Price" required autofocus>
         <label for="inputDistance" class="sr-only">Distance</label>
-        <input type="number" name="inputDistance" id="inputDistance" class="form-control" placeholder="Distance" required>
+        <input type="number" name="inputDistance" id="inputDistance" class="form-control" placeholder="In Minutes" required>
         <label for="inputTakeaway" class="sr-only">Takeaway</label>
-        <input type="number" name="inputTakeaway" id="inputTakeaway" class="form-control" placeholder="1 if true 0 if false" required>
+        <input type="name" name="inputTakeaway" id="inputTakeaway" class="form-control" placeholder="YES or NO" required>
         <label for="inputEatIn" class="sr-only">EatIn</label>
-        <input type="number" name="inputEatIn" id="inputEatIn" class="form-control" placeholder="1 if true 0 if false" required>
-        <label for="inputHealthiness" class="sr-only">EatIn</label>
-        <input type="number" name="inputHealthiness" id="inputHealthiness" class="form-control" placeholder="how healthy 1-10" required>
-        <label for="inputGluten" class="sr-only">Gluten</label>
-        <input type="number" name="inputGluten" id="inputGluten" class="form-control" placeholder="1 if true 0 if false" required>
+        <input type="name" name="inputEatIn" id="inputEatIn" class="form-control" placeholder="YES or NO" required>
+        <label for="inputHealthiness" class="sr-only">Healthiness</label>
+        <input type="number" name="inputHealthiness" id="inputHealthiness" class="form-control" placeholder="Unhealthy 1-10 Healthy" required>
+        <label for="inputGluten" class="sr-only">Gluten Free Option?</label>
+        <input type="name" name="inputGluten" id="inputGluten" class="form-control" placeholder="YES or NO" required>
         
         <button id="btnEnter" class="btn btn-lg btn-primary btn-block" type="button">Enter</button>
       </form>
