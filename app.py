@@ -28,10 +28,31 @@ def enterDetails():
 	#send details from the form to the db
 	conn = sqlite3.connect(db)
 	c = conn.cursor()
-	c.execute("INSERT INTO restaurants (Name, Price, Distance, Takeaway, 'Eat in', Healthiness, Gluten) VALUES (?,?,?,?,?,?,?);", (_name, _price, _distance, _takeaway, _eatin, _healthiness, _gluten))
+	c.execute("INSERT INTO restaurants (Name, Price, Distance, Takeaway, 'Eat in', Healthiness, 'Gluten Free Option') VALUES (?,?,?,?,?,?,?);", (_name, _price, _distance, _takeaway, _eatin, _healthiness, _gluten))
 	conn.commit()
 	conn.close()
-	return json.dumps({'message':'column added successfully !'})		
+	return json.dumps({'message':'New Restaurant added successfully !'})		
+
+@app.route('/showRecordVisit')
+def showRecordVisit():
+    return render_template('recordvisit.html')
+
+@app.route('/recordVisit',methods=['POST','GET'])
+def recordVisit():
+	#get details from form
+	_restaurant = request.form['inputRestaurant']
+	_pricePaid = request.form['inputPricePaid']
+	_dish = request.form['inputDish']
+	_rating = request.form['inputRating']
+	_date = "19/12/2017"
+
+	#send details from the form to the db
+	conn = sqlite3.connect(db)
+	c = conn.cursor()
+	c.execute("INSERT INTO visits ('Date', Restaurant, Dish, 'Price Paid', Rating) VALUES (?,?,?,?,?);", (_date, _restaurant, _pricePaid, _dish, _rating))
+	conn.commit()
+	conn.close()
+	return json.dumps({'message':'Visit Recorded successfully !'})
 
 if __name__ == "__main__":
   app.run()
