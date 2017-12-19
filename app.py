@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, json
+from flask import Flask, jsonify, render_template, request, json
 import time
 import sqlite3
 app = Flask(__name__)
@@ -53,6 +53,22 @@ def recordVisit():
 	conn.commit()
 	conn.close()
 	return json.dumps({'message':'Visit Recorded successfully !'})
+
+@app.route('/showFindLunch')
+def showFindLunch():
+    return render_template('findlunch.html')
+
+@app.route('/findLunch',methods=['POST','GET'])
+def findLunch():
+	#get max distance from form
+	_maxDistance = request.form['maxDistance']
+	
+	conn = sqlite3.connect(db)
+	c = conn.cursor()
+	c.execute("SELECT * FROM restaurants where Distance = (?);", (_maxDistance))
+	all_rows = c.fetchall()
+	return jsonify(all_rows)
+	
 
 if __name__ == "__main__":
   app.run()
