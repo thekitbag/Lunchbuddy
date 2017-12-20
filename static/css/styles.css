@@ -1,0 +1,54 @@
+.header h1 {
+	text-align: center;
+}
+
+.header{
+	width: 100%;
+}
+.header a {
+    float: left;
+    width:25%;
+    display: block;
+    background-color: grey;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    font-size: 17px;
+    padding: 10px 0;
+    border: 2px;
+}
+
+.body h1 {
+	font-family: verdana;
+	text-align: center;
+	font-size: 24px;
+	padding-top: 20px;
+
+}
+
+.footer {
+	position: absolute;
+	top: 90%;
+	width: 100;
+	margin-top: 20px;
+	font-size: 10px;
+}
+
+.bggb{
+	color:green;
+	border-radius: 2px;
+}
+
+#resultsTable {
+  margin:10px;
+}
+
+#resultsTable th{
+  color:blue;
+  margin-right:20px;
+}
+
+#resultsTable td{
+  color:red;
+  margin-right:20px;
+}

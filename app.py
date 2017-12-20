@@ -5,6 +5,7 @@ app = Flask(__name__)
 
 db = 'lunchbuddy.sqlite' 
 
+#routes for displaying pages
 
 @app.route("/")
 def main():
@@ -13,6 +14,16 @@ def main():
 @app.route('/showAddDestination')
 def showAddDestination():
     return render_template('adddestination.html')
+
+@app.route('/showRecordVisit')
+def showRecordVisit():
+    return render_template('recordvisit.html')
+
+@app.route('/showFindLunch')
+def showFindLunch():
+    return render_template('findlunch.html')
+
+#routes for button actions
 
 @app.route('/enterDetails',methods=['POST','GET'])
 def enterDetails():
@@ -33,9 +44,7 @@ def enterDetails():
 	conn.close()
 	return json.dumps({'message':'New Restaurant added successfully !'})		
 
-@app.route('/showRecordVisit')
-def showRecordVisit():
-    return render_template('recordvisit.html')
+
 
 @app.route('/recordVisit',methods=['POST','GET'])
 def recordVisit():
@@ -54,19 +63,14 @@ def recordVisit():
 	conn.close()
 	return json.dumps({'message':'Visit Recorded successfully !'})
 
-@app.route('/showFindLunch')
-def showFindLunch():
-    return render_template('findlunch.html')
+
 
 @app.route('/findLunch',methods=['POST','GET'])
-def findLunch():
-	#get max distance from form
-	_maxDistance = request.form['maxDistance']
-	results = []
+def findLunch():	
 	
 	conn = sqlite3.connect(db)
 	c = conn.cursor()
-	c.execute("SELECT Name FROM restaurants where Distance = (?);", (_maxDistance))
+	c.execute("SELECT Name FROM restaurants")
 	all_rows = c.fetchall()
 	return jsonify(all_rows)
 	

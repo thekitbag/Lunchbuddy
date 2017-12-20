@@ -8,10 +8,10 @@ $(function(){
 			success: function(response){
 				var results = response;
 				var resultsLength = results.length;
-				var table = document.getElementById("resultsTable")
+				var table = document.getElementById('resultsTable');
 				for (var i = 0; i < resultsLength; i++) {					
-					var row = table.insertRow(0);
-					var cell1 = row.insertCell(0);
+					var row = table.insertRow();
+					var cell1 = row.insertCell();
 					cell1.innerHTML = results[i]				    
 				    //Do something
 				};

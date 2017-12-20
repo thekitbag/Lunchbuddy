@@ -3,39 +3,50 @@
  
 <head>
     <title>Lunch Buddy</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/styles.css">
     <script src="../static/js/jquery-3.2.1.js"></script>
-    <script src="../static/js/findLunch.js"></script>  
+    <script src="../static/js/findLunch.js?newversion5"></script>  
  
 </head>
  
 <body>
  
     <div class="container">
-        <div class="header">         
-           <h1>Find a place to go and eat<h1>
-            <form class="form-signin">
-            <label for="maxDistance" class="sr-only">Max Distance</label>
-            <input type="number" name="maxDistance" id="maxDistance" class="form-control" placeholder="Restaurant" required autofocus>   
-
-            <button id="btnGetLunches" class="btn btn-lg btn-primary btn-block" type="button">Enter</button>
-           </form>
-            
+        
+        <div class="header">             
+            <h1>Lunch Buddy</h1>
+            <a class="nav-button" href="/" role="button">Home</a>            
+            <a class="nav-button" href="showAddDestination" role="button">Add a new desintation</a>
+            <a class="nav-button" href="showRecordVisit" role="button">Record a visit</a>
+            <a class="nav-button" href="showFindLunch" role="button">Find a place to eat</a>        
         </div>
-        <table id="resultsTable">
-            <thead>
-                <th> Restaurant </th>                
-            </thead>
 
-            <tbody id="table-body">
-                
-                <tr>
-                    <td> </td>                    
-                </tr>
-                
-            </tbody>
-        </table>   
-              
-                
+        <div class="search-criteria"> 
+            <h1>Find a place to go and eat<h1>
+            <button id="btnGetLunches" class="bggb" type="button">Show All Options</button>                       
+        </div>
+
+        <table id="resultsTable">
+          <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th> Distance </th>
+            <th> Takeaway </th>
+            <th> Eat in </th>
+            <th> Healthiness </th>
+            <th> Gluten Free Option </th>
+          </tr>
+          <tr>
+            <td>testName</td>
+            <td>testPrice</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+        </table> 
+
         <footer class="footer">
             <p>&copy; Faraday Inc 2017</p>
         </footer>
