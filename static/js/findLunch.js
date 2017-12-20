@@ -8,8 +8,11 @@ $(function(){
 			success: function(response){
 				var results = response;
 				var resultsLength = results.length;
-				for (var i = 0; i < resultsLength; i++) {
-				    window.alert(results[i]);
+				var table = document.getElementById("resultsTable")
+				for (var i = 0; i < resultsLength; i++) {					
+					var row = table.insertRow(0);
+					var cell1 = row.insertCell(0);
+					cell1.innerHTML = results[i]				    
 				    //Do something
 				};
 			},
@@ -18,9 +21,4 @@ $(function(){
 			}
 		});		
 	});
-});
-$(function(){
-	$("p").click(function(){
-		$(this).hide();
-    });
 });
