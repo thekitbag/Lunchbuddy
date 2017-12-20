@@ -62,10 +62,11 @@ def showFindLunch():
 def findLunch():
 	#get max distance from form
 	_maxDistance = request.form['maxDistance']
+	results = []
 	
 	conn = sqlite3.connect(db)
 	c = conn.cursor()
-	c.execute("SELECT * FROM restaurants where Distance = (?);", (_maxDistance))
+	c.execute("SELECT Name FROM restaurants where Distance = (?);", (_maxDistance))
 	all_rows = c.fetchall()
 	return jsonify(all_rows)
 	
