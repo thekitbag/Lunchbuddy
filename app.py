@@ -70,9 +70,20 @@ def findLunch():
 	
 	conn = sqlite3.connect(db)
 	c = conn.cursor()
-	c.execute("SELECT Name FROM restaurants")
+	c.execute("SELECT * FROM restaurants")
 	all_rows = c.fetchall()
 	return jsonify(all_rows)
+
+def shutdown_server():
+    func = request.environ.get('werkzeug.server.shutdown')
+    if func is None:
+        raise RuntimeError('Not running with the Werkzeug Server')
+    func()
+
+@app.route('/shutdown', methods=['POST'])
+def shutdown():
+    shutdown_server()
+    return 'Server shutting down...'
 	
 
 if __name__ == "__main__":
