@@ -1,9 +1,5 @@
-Validation
-Make forms dropdowns
-navigation bar
 CSS
-create page for viewing the data in the db
+Validation
 create page for picking at random
 create page for querying the db e.g. GF options
 GA and optimise
-V

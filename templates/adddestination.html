@@ -25,29 +25,38 @@
       <div class="lunch-details">
         <h1>Add a new lunch destination</h1>
         <form class="form-signin">
-        <label for="inputName" class="sr-only">Name</label>
-        <input type="name" name="inputName" id="inputName" class="form-control" placeholder="Name" required autofocus>
-        <label for="inputPrice" class="sr-only">Price</label>
-        <input type="number" name="inputPrice" id="inputPrice" class="form-control" placeholder="Input Price" required autofocus>
-        <label for="inputDistance" class="sr-only">Distance</label>
-        <input type="number" name="inputDistance" id="inputDistance" class="form-control" placeholder="In Minutes" required>
-        <label for="inputTakeaway" class="sr-only">Takeaway</label>
-        <input type="name" name="inputTakeaway" id="inputTakeaway" class="form-control" placeholder="YES or NO" required>
-        <label for="inputEatIn" class="sr-only">EatIn</label>
-        <input type="name" name="inputEatIn" id="inputEatIn" class="form-control" placeholder="YES or NO" required>
-        <label for="inputHealthiness" class="sr-only">Healthiness</label>
-        <input type="number" name="inputHealthiness" id="inputHealthiness" class="form-control" placeholder="Unhealthy 1-10 Healthy" required>
-        <label for="inputGluten" class="sr-only">Gluten Free Option?</label>
-        <input type="name" name="inputGluten" id="inputGluten" class="form-control" placeholder="YES or NO" required>
-        
-        <button id="btnEnter" class="btn btn-lg btn-primary btn-block" type="button">Enter</button>
-      </form>
+          <label for="inputName" class="sr-only">Name</label>
+          <input type="name" name="inputName" id="inputName" class="form-control" placeholder="Name" required autofocus>
+          <label for="inputPrice" class="sr-only">Price</label>
+          <input type="number" name="inputPrice" id="inputPrice" class="form-control" placeholder="Input Price" required autofocus>
+          <label for="inputDistance" class="sr-only">Distance</label>
+          <input type="number" name="inputDistance" id="inputDistance" class="form-control" placeholder="In Minutes" required>
+          <label for="inputTakeaway" class="sr-only">Takeaway</label>
+            <select>
+              <option value="YES">YES</option>
+              <option value="NO">NO</option>
+            </select>
+          <label for="inputEatIn" class="sr-only">EatIn</label>
+            <select>
+              <option value="YES">YES</option>
+              <option value="NO">NO</option>
+            </select>
+          <label for="inputHealthiness" class="sr-only">Healthiness</label>
+          <input type="number" name="inputHealthiness" id="inputHealthiness" class="form-control" placeholder="Unhealthy 1-10 Healthy" required>
+          <label for="inputGluten" class="sr-only">Gluten Free Option?</label>
+            <select>
+              <option value="YES">YES</option>
+              <option value="NO">NO</option>
+            </select>        
+          <button id="btnEnter" class="btn btn-lg btn-primary btn-block" type="button">Enter</button>
+        </form>
       </div>
  
        
  
       <footer class="footer">
-        <p>&copy; Faraday Inc 2017</p>
+            <button id="killserver" class="bggb" type="button">killserver</button>  
+            <p>&copy; Faraday Inc 2017</p>
       </footer>
  
     </div>
