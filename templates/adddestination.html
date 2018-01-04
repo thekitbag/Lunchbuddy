@@ -2,9 +2,9 @@
 <html lang="en">
   <head>
     <title>Lunch Buddy</title>
-    <link rel="stylesheet" type="text/css" href="../static/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/styles.css?version=1">
     <script src="../static/js/jquery-3.2.1.js"></script>
-    <script src="../static/js/addDestination.js"></script>    
+    <script src="../static/js/addDestination.js?version=7"></script>    
   </head>
  
   <body>
@@ -12,15 +12,11 @@
       <div class="header">             
             <h1>Lunch Buddy</h1>
             <a class="nav-button" href="/" role="button">Home</a>            
-            <a class="nav-button" href="showAddDestination" role="button">Add a new desintation</a>
+            <a class="nav-button" href="showAddDestination" role="button">Destination Editor</a>
             <a class="nav-button" href="showRecordVisit" role="button">Record a visit</a>
             <a class="nav-button" href="showFindLunch" role="button">Find a place to eat</a>        
         </div> 
-        
-        
- 
-         
-    
+             
      
       <div class="lunch-details">
         <h1>Add a new lunch destination</h1>
@@ -50,6 +46,23 @@
             </select>        
           <button id="btnEnter" class="btn btn-lg btn-primary btn-block" type="button">Enter</button>
         </form>
+      </div>
+
+      <div class="edit-destination">
+        <h1>Make Changes to an existing Destination</h1>
+        <button id="btnGetAllDestinations" class="bggb" type="button">List Existing</button>        
+        <table id="destinationList">
+          <thead>
+            <tr>
+                <th>Name</th>                
+            </tr>
+          </thead>
+          <tbody>
+              <tr>
+                <td>Test</td>
+              </tr>
+          </tbody>          
+        </table>
       </div>
  
        

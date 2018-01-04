@@ -5,7 +5,7 @@
     <title>Lunch Buddy</title>
     <link rel="stylesheet" type="text/css" href="../static/css/styles.css?newversion123">
     <script src="../static/js/jquery-3.2.1.js"></script>
-    <script src="../static/js/findLunch.js?newversion31"></script>  
+    <script src="../static/js/findLunch.js?newversion39"></script>  
  
 </head>
  
@@ -16,14 +16,16 @@
         <div class="header">             
             <h1>Lunch Buddy</h1>
             <a class="nav-button" href="/" role="button">Home</a>            
-            <a class="nav-button" href="showAddDestination" role="button">Add a new desintation</a>
+            <a class="nav-button" href="showAddDestination" role="button">Destination Editor</a>
             <a class="nav-button" href="showRecordVisit" role="button">Record a visit</a>
             <a class="nav-button" href="showFindLunch" role="button">Find a place to eat</a>        
         </div>
 
         <div class="search-criteria"> 
             <h1>Find a place to go and eat<h1>
-            <button id="btnGetLunches" class="bggb" type="button">Show All Options</button>                       
+            <button id="btnGetLunches" class="bggb" type="button">Show All Options</button>
+            <button id="btnGetTakeAway" class="bggb" type="button">Show Takeaway Only</button>
+            <button id="btnGetEatIn" class="bggb" type="button">Show Eat In Only</button>                         
         </div>
 
         <table id="resultsTable">

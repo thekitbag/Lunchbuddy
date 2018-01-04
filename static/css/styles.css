@@ -54,6 +54,15 @@ table {
   margin-bottom: 25px;
 }
 
+.edit-destination table{
+  width:10%;
+}
+
+.edit-destination tbody{
+  background-color:blue;
+}
+
+
 #killserver {
   position: fixed;
   right:0;

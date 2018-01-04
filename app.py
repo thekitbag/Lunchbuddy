@@ -67,12 +67,38 @@ def recordVisit():
 
 @app.route('/findLunch',methods=['POST','GET'])
 def findLunch():	
-	
 	conn = sqlite3.connect(db)
 	c = conn.cursor()
 	c.execute("SELECT * FROM restaurants")
 	all_rows = c.fetchall()
 	return jsonify(all_rows)
+
+@app.route('/findTakeAway',methods=['POST','GET'])
+def findTakeAway():	
+	conn = sqlite3.connect(db)
+	c = conn.cursor()
+	c.execute("SELECT * FROM restaurants where Takeaway LIKE 'YES'")
+	all_rows = c.fetchall()
+	return jsonify(all_rows)
+
+@app.route('/findEatIn',methods=['POST','GET'])
+def findEatIn():	
+	conn = sqlite3.connect(db)
+	c = conn.cursor()
+	c.execute("SELECT * FROM restaurants where Eat_in LIKE 'YES'")
+	all_rows = c.fetchall()
+	return jsonify(all_rows)
+
+@app.route('/getAllDestinations',methods=['POST','GET'])
+def getAllDestinations():	
+	conn = sqlite3.connect(db)
+	c = conn.cursor()
+	c.execute("SELECT Name FROM restaurants")
+	all_rows = c.fetchall()
+	return jsonify(all_rows)
+
+
+
 
 def shutdown_server():
     func = request.environ.get('werkzeug.server.shutdown')
